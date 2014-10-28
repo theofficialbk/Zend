@@ -1,0 +1,226 @@
+
+<style type="text/css">
+    .CSS {
+        margin:0px;padding:0px;
+        width:100%;
+        border:1px solid #000000;
+
+        -moz-border-radius-bottomleft:12px;
+        -webkit-border-bottom-left-radius:12px;
+        border-bottom-left-radius:12px;
+
+        -moz-border-radius-bottomright:12px;
+        -webkit-border-bottom-right-radius:12px;
+        border-bottom-right-radius:12px;
+
+        -moz-border-radius-topright:12px;
+        -webkit-border-top-right-radius:12px;
+        border-top-right-radius:12px;
+
+        -moz-border-radius-topleft:12px;
+        -webkit-border-top-left-radius:12px;
+        border-top-left-radius:12px;
+    }.CSS table{
+         border-collapse: collapse;
+         border-spacing: 0;
+         width:100%;
+         height:100%;
+         margin:0px;padding:0px;
+     }.CSS tr:last-child td:last-child {
+          -moz-border-radius-bottomright:12px;
+          -webkit-border-bottom-right-radius:12px;
+          border-bottom-right-radius:12px;
+      }
+    .CSS table tr:first-child td:first-child {
+        -moz-border-radius-topleft:12px;
+        -webkit-border-top-left-radius:12px;
+        border-top-left-radius:12px;
+    }
+    .CSS table tr:first-child td:last-child {
+        -moz-border-radius-topright:12px;
+        -webkit-border-top-right-radius:12px;
+        border-top-right-radius:12px;
+    }.CSS tr:last-child td:first-child{
+         -moz-border-radius-bottomleft:12px;
+         -webkit-border-bottom-left-radius:12px;
+         border-bottom-left-radius:12px;
+     }.CSS tr:hover td{
+
+      }
+    .CSS tr:nth-child(odd){ background-color:#e5dede; }
+    .CSS tr:nth-child(even)    { background-color:#ffffff; }.CSS td{
+                                                                vertical-align:middle;
+
+
+                                                                border:1px solid #000000;
+                                                                border-width:0px 1px 1px 0px;
+                                                                text-align:right;
+                                                                padding:12px;
+                                                                font-size:14px;
+                                                                font-family:Arial;
+                                                                font-weight:normal;
+                                                                color:#000000;
+                                                            }.CSS tr:last-child td{
+                                                                 border-width:0px 1px 0px 0px;
+                                                             }.CSS tr td:last-child{
+                                                                  border-width:0px 0px 1px 0px;
+                                                              }.CSS tr:last-child td:last-child{
+                                                                   border-width:0px 0px 0px 0px;
+                                                               }
+    .CSS tr:first-child td{
+        background:-o-linear-gradient(bottom, #eeeeee 5%, #93908d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeeeee), color-stop(1, #93908d) );
+        background:-moz-linear-gradient( center top, #eeeeee 5%, #93908d 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee", endColorstr="#93908d");	background: -o-linear-gradient(top,#eeeeee,93908d);
+
+        background-color:#eeeeee;
+        border:0px solid #000000;
+        text-align:center;
+        border-width:0px 0px 1px 1px;
+        font-size:16px;
+        font-family:Arial;
+        font-weight:bold;
+        color:#111111;
+    }
+    .CSS tr:first-child:hover td{
+        background:-o-linear-gradient(bottom, #eeeeee 5%, #93908d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeeeee), color-stop(1, #93908d) );
+        background:-moz-linear-gradient( center top, #eeeeee 5%, #93908d 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeeeee", endColorstr="#93908d");	background: -o-linear-gradient(top,#eeeeee,93908d);
+
+        background-color:#eeeeee;
+    }
+    .CSS tr:first-child td:first-child{
+        border-width:0px 0px 1px 0px;
+    }
+    .CSS tr:first-child td:last-child{
+        border-width:0px 0px 1px 1px;
+    }
+    fieldset{ border: 0; margin: 0; font-style: italic; }
+    legend{ display: none; }
+    label{ width: 100%; float: left; clear: both; font-size: 15px; font-weight: bold; color: #999; line-height: 3; }
+    input,table, textarea{ font-size: 18px; line-height: 1.4; padding: 10px; border: 2px solid #eee; }
+    textarea{ background-color: #eee; color: blue; }
+    h2{ font-size: 30px; }
+    #fs-input input{ width: 500px; margin-bottom: 15px; }
+    #fs-input input.cb{ width: auto; }
+    #fs-submit input{ background-color: #333; color: lightyellow; }
+</style>
+
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js'></script>
+<script type="text/javascript" src="http://lucianocosta.info/jquery.mtz.monthpicker/jquery.mtz.monthpicker.js"></script>
+<link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css'>
+<script type="text/javascript">
+    $('#default_widget').monthpicker(); </script>
+<style type="text/css">
+    td.mtz-monthpicker-month {
+        text-align:center;
+    }
+    select.mtz-monthpicker:focus {
+        outline: none;
+    }
+</style>
+
+<?php
+$nexmo=$this->app;
+$nexmo->setAttribute(
+    'action',
+    $this->url(
+        null,
+        array(
+            'controller' => 'Register',
+            'action' => 'process'
+        )
+    )
+);
+
+if ($this->error):
+    ?>
+    <p class="error">
+        There were one or more issues with your submission.
+        Please correct them as
+        indicated below.
+    </p>
+<?php endif ?>
+<table style="width:100%;">
+<?php
+$nexmo->setAttribute('method', 'post');
+echo $this->form()->openTag($nexmo);
+
+?>
+
+        <tr>
+            <td colspan="5"><?php echo $this->formLabel($nexmo->get('default_widget')); ?>
+
+
+            </td><td><?php
+                echo $this->formElement($nexmo->get('default_widget'));
+                ?></td>
+            <td>
+                <input type="submit" name="submit" class="btn btn-success btn-lg" />
+            </td>
+            <td>
+            </td>
+        </tr>
+<?php echo $this->form()->closeTag($nexmo);?>
+</table>
+
+<div >
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?php echo $this->translate('Monthly Nexmo Response Times') ?></h3>
+        </div>
+        <div class="panel-body">
+    <p><?php if(isset($_POST['default_widget']) && ($_POST['default_widget'])) {?></p>
+    <p><a  href="<?php echo $this->url('album',array('action'=>'select'));?>" ><?php echo $this->translate('Main Section') ?> &raquo;</a></p>
+    <?}?>
+        </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#default_widget').monthpicker();
+
+        $('.monthpicker').monthpicker();
+
+        $('#custom_widget').monthpicker({
+            pattern: 'yyyy-mm',
+            selectedYear: 2010,
+            startYear: 2008,
+            finalYear: 2012,
+            monthNames: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+        });
+
+        $('#events_widget').monthpicker().bind('monthpicker-click-month', function (e, month) {
+            alert('You clicked on month ' + month);
+
+        }).bind('monthpicker-change-year', function (e, year) {
+                alert('You chosed the year ' + year);
+
+            }).bind('monthpicker-show', function () {
+                alert('showing... ' + $(this).attr('id'));
+
+            }).bind('monthpicker-hide', function () {
+                alert('hiding... ' + $(this).attr('id'));
+            });
+
+        $('#last_widget').monthpicker({selectedYear: 2009, startYear: 2008, finalYear: 2010, openOnFocus: false});
+
+        $('#last_widget').monthpicker().bind('monthpicker-change-year', function (e, year) {
+            $('#last_widget').monthpicker('disableMonths', []);
+            if (year === '2008') {
+                $('#last_widget').monthpicker('disableMonths', [1, 2, 3, 4]);
+            }
+            if (year === '2010') {
+                $('#last_widget').monthpicker('disableMonths', [9, 10, 11, 12]);
+            }
+        });
+
+        $('#last_widget_button').bind('click', function () {
+            $('#last_widget').monthpicker('show');
+        });
+
+    });
+</script>

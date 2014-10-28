@@ -1,0 +1,18 @@
+<?php
+$title="Add new Partner";
+$this->headtitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title);?></h1>
+<?php
+$form->setAttribute('action',$this->url('album',array('action'=>'add')));
+$form->prepare();
+#print("<pre>".print_r($form,true)."</pre>");
+#die();
+echo $this->form()->openTag($form);
+//echo $this->formHidden($form->get('id'));
+//echo $this->formRow($form->get('title'));
+//echo $this->formRow($form->get('partner'));
+//echo $this->formSubmit($form->get('submit'));
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+?>

@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: bilal.khalid
+ * Date: 23/10/14
+ * Time: 10:46
+ */
+
+
+ foreach ($partner as $part) : ?>
+    <tr>
+        <td><?php echo $this->escapeHtml($part->id);?></td>
+        <td><?php echo $this->escapeHtml($part->artist);?></td>
+        <td>
+            <a href="<?php echo $this->url('album',
+                array('action'=>'edit', 'id' => $part->id));?>">Edit</a>
+            <a href="<?php echo $this->url('album',
+                array('action'=>'delete', 'id' => $part->id));?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
